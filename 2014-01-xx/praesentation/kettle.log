@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.12.7)  8 DEC 2013 13:47
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.12.7)  8 DEC 2013 19:04
 entering extended mode
  %&-line parsing enabled.
 **kettle.tex
@@ -961,17 +961,17 @@ File: kanton_4f.pdf Graphic file (type QTm)
  <use  "kanton_4f.pdf" > [2
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 70.
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 70.
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 70.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 69.
 
 (/usr/share/texmf-texlive/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
@@ -984,11 +984,11 @@ File: kanton_4f.pdf Graphic file (type QTm)
 LaTeX Font Info:    Font shape `EU1/FrutigerLTCom(0)/m/sl' in size <10.95> not 
 available
 (Font)              Font shape `EU1/FrutigerLTCom(0)/m/it' tried instead on inp
-ut line 88.
+ut line 87.
 LaTeX Font Info:    Font shape `EU1/FrutigerLTCom(0)/m/sl' in size <10> not ava
 ilable
 (Font)              Font shape `EU1/FrutigerLTCom(0)/m/it' tried instead on inp
-ut line 88.
+ut line 87.
 File: kanton_4f.pdf Graphic file (type QTm)
  <use  "kanton_4f.pdf" > [4
 
@@ -1006,110 +1006,19 @@ File: kanton_4f.pdf Graphic file (type QTm)
  <use  "kanton_4f.pdf" > [7
 
 ]
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 141
+.
+
+(/usr/share/texmf-texlive/tex/xelatex/euenc/eu1lmtt.fd
+File: eu1lmtt.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
 File: kanton_4f.pdf Graphic file (type QTm)
 
 <use  "kanton_4f.pdf" > [8
 
 ]
-File: bilder/veriso_topic_loader_3.png Graphic file (type QTm)
- <use  "bilder/veriso_topic_loader_3.png" >
-Overfull \vbox (0.96973pt too high) detected at line 156
- []
-
 File: kanton_4f.pdf Graphic file (type QTm)
-<use  "kanton_4f.pdf" > [9
-
-]
-File: bilder/veriso_checks_3.png Graphic file (type QTm)
- <use  "bilder/veriso_checks_3.png" >
-Overfull \vbox (0.26709pt too high) detected at line 163
- []
-
-File: kanton_4f.pdf Graphic file (type QTm)
-<use  "kanton_4f.pdf" > [10
-
-]
-\openout3 = `kettle.vrb'.
-
- (./kettle.vrb
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 3.
-
-(/usr/share/texmf-texlive/tex/xelatex/euenc/eu1lmtt.fd
-File: eu1lmtt.fd 2007/01/14 v1.3 Font defs for Latin Modern
-))
-Overfull \vbox (13.50404pt too high) detected at line 203
- []
-
-File: kanton_4f.pdf Graphic file (type QTm)
-<use  "kanton_4f.pdf" > [11
-
-]
-\openout3 = `kettle.vrb'.
-
- (./kettle.vrb)
-File: kanton_4f.pdf Graphic file (type QTm)
- <use  "kanton_4f.pdf" > [12
-
-]
-\openout3 = `kettle.vrb'.
-
-
-(./kettle.vrb)
-File: kanton_4f.pdf Graphic file (type QTm)
- <use  "kanton_4f.pdf" > [13
-
-]
-File: bilder/veriso_spinnennetz_1.png Graphic file (type QTm)
-
-<use  "bilder/veriso_spinnennetz_1.png" >
-File: kanton_4f.pdf Graphic file (type QTm)
- <use  "kanton_4f.pdf" > [14
-
-]
-File: bilder/veriso_spinnennetz_2.png Graphic file (type QTm)
-
-<use  "bilder/veriso_spinnennetz_2.png" >
-File: kanton_4f.pdf Graphic file (type QTm)
- <use  "kanton_4f.pdf" > [15
-
-]
-File: bilder/veriso_f12.png Graphic file (type QTm)
-
-<use  "bilder/veriso_f12.png" >
-File: kanton_4f.pdf Graphic file (type QTm)
- <use  "kanton_4f.pdf" > [16
-
-]
-File: bilder/veriso_gwr_import.png Graphic file (type QTm)
-
-<use  "bilder/veriso_gwr_import.png" >
-File: kanton_4f.pdf Graphic file (type QTm)
- <use  "kanton_4f.pdf" > [17
-
-]
-\openout3 = `kettle.vrb'.
-
-
-(./kettle.vrb)
-File: kanton_4f.pdf Graphic file (type QTm)
- <use  "kanton_4f.pdf" > [18
-
-]
-File: bilder/veriso_checks_3.png Graphic file (type QTm)
-
-<use  "bilder/veriso_checks_3.png" >
-Overfull \vbox (0.26709pt too high) detected at line 326
- []
-
-File: kanton_4f.pdf Graphic file (type QTm)
-<use  "kanton_4f.pdf" > [19
-
-]
-\openout3 = `kettle.vrb'.
-
- (./kettle.vrb)
-File: kanton_4f.pdf Graphic file (type QTm)
- <use  "kanton_4f.pdf" > [20
+ <use  "kanton_4f.pdf" > [9
 
 ]
 \tf@nav=\write5
@@ -1121,15 +1030,14 @@ File: kanton_4f.pdf Graphic file (type QTm)
 \tf@snm=\write7
 \openout7 = `kettle.snm'.
 
-
-(./kettle.aux) ) 
+ (./kettle.aux) ) 
 Here is how much of TeX's memory you used:
- 17375 strings out of 494665
- 304792 string characters out of 1166477
- 413436 words of memory out of 3000000
- 20149 multiletter control sequences out of 15000+50000
- 13422 words of font info for 73 fonts, out of 3000000 for 9000
+ 17299 strings out of 494665
+ 303012 string characters out of 1166477
+ 408436 words of memory out of 3000000
+ 20098 multiletter control sequences out of 15000+50000
+ 10372 words of font info for 57 fonts, out of 3000000 for 9000
  669 hyphenation exceptions out of 8191
- 45i,15n,53p,478b,527s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,15n,53p,478b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on kettle.pdf (20 pages).
+Output written on kettle.pdf (9 pages).
