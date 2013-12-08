@@ -1,0 +1,9 @@
+\frametitle {Checkliste}
+  \begin{itemize}
+  \item Möglichst einfach.
+  \item Keine zusätzliche Software.
+  \item HTML-Formulare
+  \item Persistentes Speichern von Daten mittels \textit{Web Storage}.
+  \item Achtung: Daten «nur» im Browser gespeichert!
+  \item Für jedes Operat wird HTML-Datei von Template kopiert.
+  \end{itemize}
