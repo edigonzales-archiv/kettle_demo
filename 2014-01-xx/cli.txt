@@ -1,0 +1,2 @@
+/home/zicke/Apps/geokettle-2.5/kitchen.sh -file=/home/zicke/Projekte/kettle_demo/2014-01-xx/geokettle/mocheckso/import_and_sync_mocheckso.kjb 
+
