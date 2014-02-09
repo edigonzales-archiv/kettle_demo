@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>test5</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <directory>&#47;</directory>
+    <parameters>
+    </parameters>
+    <log>
+      <read/>
+      <write/>
+      <input/>
+      <output/>
+      <update/>
+      <rejected/>
+      <connection/>
+      <table/>
+      <step_performance_table/>
+      <use_batchid>Y</use_batchid>
+      <use_logfield>N</use_logfield>
+      <size_limit_lines/>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <modified_user>-</modified_user>
+  <modified_date>2014&#47;01&#47;28 21:08:31.247</modified_date>
+  </info>
+  <notepads>
+    <notepad>
+      <note>Habe ich das richtig verstanden?
+
+Key field: Braucht er zum Vergleichen, dh. falls zwei gleiche Keyfield-Value gefunden
+werden, werden anschliessen die Valuefied-Werte verglichen. Falls sich da was geändert 
+hat, bekommt es das Flagfield = changed.
+
+Falls es den Keyfield-Value nicht mehr gibt, gibts ein deleted. Falls einer neu ist -&gt; new.
+
+Tests:
+1) 21 Datensätze auf sogis1 -&gt; Synchronized after merge: output = 89 -&gt; passt.
+2) identische Daten, dh. 4531 = sogis1 -&gt; Synchronized after merge: output = 0 -&gt; passt.
+3) Eine ogc_fid (=PK) auf 4531 manuell geändert (nächst möglicher Wert)  
+     -&gt; Synchronized after merge: output = 1 -&gt; passt.
+
+
+Noch verstehen lernen, was das alles wirklich genau soll. Auch mit den Fields im 
+Synchronized after merge Schritt.</note>
+      <xloc>521</xloc>
+      <yloc>227</yloc>
+      <width>530</width>
+      <heigth>282</heigth>
+    </notepad>
+    <notepad>
+      <note>Gemeindegrenzen</note>
+      <xloc>523</xloc>
+      <yloc>25</yloc>
+      <width>115</width>
+      <heigth>26</heigth>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>pg_rosebud2</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>rosebud2</database>
+    <port>5432</port>
+    <username>stefan</username>
+    <password>Encrypted 2be98afc86aa7f29ea21ca97cdb80fe88</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>pg_rosebud2_internet</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>rosebud2_internet</database>
+    <port>5432</port>
+    <username>stefan</username>
+    <password>Encrypted 2be98afc86aa7f29ea21ca97cdb80fe88</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>pg_rosebud2_intranet</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>rosebud2_intranet</database>
+    <port>5432</port>
+    <username>stefan</username>
+    <password>Encrypted 2be98afc86aa7f29ea21ca97cdb80fe88</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>4531</from><to>Merge Rows (diff)</to><enabled>Y</enabled> </hop>  <hop> <from>sogis1</from><to>Merge Rows (diff)</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Rows (diff)</from><to>Synchronize after merge</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>4531</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>pg_rosebud2</connection>
+    <sql>SELECT * 
+FROM av_avdpool_ng.gemeindegrenzen_gemeindegrenze 
+ORDER BY ogc_fid
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>148</xloc>
+      <yloc>60</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Rows (diff)</name>
+    <type>MergeRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <keys>
+      <key>ogc_fid</key>
+    </keys>
+    <values>
+      <value>tid</value>
+      <value>entstehung</value>
+      <value>gemeindegrenze_von</value>
+      <value>geometrie</value>
+      <value>gem_bfs</value>
+      <value>los</value>
+      <value>lieferdatum</value>
+    </values>
+<flag_field>flagfield</flag_field>
+<reference>sogis1</reference>
+<compare>4531</compare>
+    <compare>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>355</xloc>
+      <yloc>146</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Synchronize after merge</name>
+    <type>SynchronizeAfterMerge</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>pg_rosebud2_internet</connection>
+    <commit>100</commit>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <use_batch>N</use_batch>
+    <perform_lookup>N</perform_lookup>
+    <operation_order_field>flagfield</operation_order_field>
+    <order_insert>new</order_insert>
+    <order_update>changed</order_update>
+    <order_delete>deleted</order_delete>
+    <lookup>
+      <schema>av_avdpool_ng</schema>
+      <table>gemeindegrenzen_gemeindegrenze</table>
+      <key>
+        <name>ogc_fid</name>
+        <field>ogc_fid</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>tid</name>
+        <field>tid</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>entstehung</name>
+        <field>entstehung</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>gemeindegrenze_von</name>
+        <field>gemeindegrenze_von</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>geometrie</name>
+        <field>geometrie</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>gem_bfs</name>
+        <field>gem_bfs</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>los</name>
+        <field>los</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>lieferdatum</name>
+        <field>lieferdatum</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>ogc_fid</name>
+        <rename>ogc_fid</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tid</name>
+        <rename>tid</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>entstehung</name>
+        <rename>entstehung</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>gemeindegrenze_von</name>
+        <rename>gemeindegrenze_von</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>geometrie</name>
+        <rename>geometrie</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>gem_bfs</name>
+        <rename>gem_bfs</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>los</name>
+        <rename>los</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>lieferdatum</name>
+        <rename>lieferdatum</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>519</xloc>
+      <yloc>147</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sogis1</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>pg_rosebud2_internet</connection>
+    <sql>SELECT * 
+FROM av_avdpool_ng.gemeindegrenzen_gemeindegrenze 
+ORDER BY ogc_fid
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>144</xloc>
+      <yloc>218</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>

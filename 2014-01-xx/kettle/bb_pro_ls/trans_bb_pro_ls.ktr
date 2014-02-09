@@ -88,6 +88,44 @@
       <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>pg_rosebud2_internet</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>rosebud2_internet</database>
+    <port>5432</port>
+    <username>stefan</username>
+    <password>Encrypted 2be98afc86aa7f29ea21ca97cdb80fe88</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>pg_rosebud2_intranet</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>rosebud2_intranet</database>
+    <port>5432</port>
+    <username>stefan</username>
+    <password>Encrypted 2be98afc86aa7f29ea21ca97cdb80fe88</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
   <hop> <from>&#xd6;ffentliche Grundst&#xfc;cke</from><to>Bodenbedeckungsart pro Liegenschaft</to><enabled>Y</enabled> </hop>
   <hop> <from>Bodenbedeckungsart pro Liegenschaft</from><to>Sort rows</to><enabled>Y</enabled> </hop>
@@ -231,8 +269,8 @@
       </custom>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>964</xloc>
-      <yloc>136</yloc>
+      <xloc>951</xloc>
+      <yloc>138</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -283,7 +321,7 @@
            <schema_name/>
            </partitioning>
     <connection>pg_rosebud2</connection>
-    <sql>SELECT av.gem_bfs, av.nummer, av.nbident, av.gem_bfs&#xa;FROM av_avdpool_ng.liegenschaften_grundstueck av&#xa; LEFT JOIN av_avdpool_ng.liegenschaften_liegenschaft av_li ON av_li.liegenschaft_von &#x3d; av.tid&#xa;WHERE av.art &#x3d; 0 AND replace&#x28;replace&#x28;av.nummer, &#x27;&#x2f;&#x27;,&#x27;.&#x27;&#x29;, &#x27; LRO&#x27;,&#x27;&#x27;&#x29;&#x3a;&#x3a;numeric &#x3e;&#x3d; 90000&#xa;--AND av.gem_bfs &#x3d; 2549&#x3b;</sql>
+    <sql>SELECT av.gem_bfs, av.nummer, av.nbident, av.gem_bfs&#xa;FROM av_avdpool_ng.liegenschaften_grundstueck av&#xa; LEFT JOIN av_avdpool_ng.liegenschaften_liegenschaft av_li ON av_li.liegenschaft_von &#x3d; av.tid&#xa;WHERE av.art &#x3d; 0 AND replace&#x28;replace&#x28;av.nummer, &#x27;&#x2f;&#x27;,&#x27;.&#x27;&#x29;, &#x27; LRO&#x27;,&#x27;&#x27;&#x29;&#x3a;&#x3a;numeric &#x3e;&#x3d; 90000&#xa;AND av.gem_bfs &#x3d; 2549&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
