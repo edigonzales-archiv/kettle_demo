@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Spass mit GeoKettle</h1>
+		<p>Stefan Ziegler&mdash;Amt für Geoinformation Kanton Solothurn</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<!--<h2>Fun with GeoKettle</h2>
+		<p>QGIS server benchmarking<br>Stefan Ziegler&mdash;Amt für Geoinformation Kanton Solothurn</p>-->
+		<img src="pictures/cover.jpg" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+				}
+		</style>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Inhalt</h2>
+		<ul>
+			<li>Was ist Kettle? Was ist PDI? Was ist GeoKettle?</a></li>
+			<li>Geo ohne GeoKettle?</li>
+			<li>Demo</li>
+			<li>Inspiration</li>
+		</ul>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Kettle/PDI</h2>
+		<ul>
+			<li>ETL-Tool (Extract, Transform, Load)</li>
+			<li>Kettle = PDI (Pentaho Data Integration)</li>
+			<li>Dual-licensing</li>
+		</ul>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Funktionsweise</h2>
+		<ul>
+			<li>Hübsche Oberfläche</li>
+			<li>Relativ intuitiv...</li>
+			<li>Prozesse gespeichert in einer XML-Datei (in DB-Repo oder filebasiert)</li>
+			<li>Kettle interpretiert XML-Datei</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Funktionsweise</h2>
+		<ul>
+			<li>Prozesse werden gestartet:</li>
+			<ul>
+			  <li>aus der Oberfläche <em>Spoon</em></li>
+			  <li>von der Kommandozeile <em>Pan</em> resp. <em>Kitchen</em></li>
+			  <li>via Webserver <em>Carte</em> (auf entferntem Rechner)</li>
+			  <li>oder ganz abgefahren in Cluster.</li>
+			</ul>
+		</ul>
+	</div></section>
+	
+	
+	<section class="slide"><div>
+		<h2>Weitere ETL-Tools</h2>
+		<ul>
+			<li>Talend Open Studio (TOS)</li>
+			<ul>
+			  <li>komplizierter?</li>
+			  <li>Codegenerator: Erzeugt Java-Code</li>
+			</ul>
+			<li>FME:</li>
+			<ul>
+			  <li>Kenne ich nicht.</li>
+			  <li>Arbeitsplatzwechsel resp. Arbeitsmittelwechsel notwendig &#128546;</li>
+			  <li>Interlis &#128515;</li>
+			</ul>
+		</ul>
+	</div></section>
+	
+	
+
+	<section class="slide"><div>
+		<h2>GeoKettle</h2>
+		<ul>
+			<li>Kettle um Geofunktionalitäten erweitert.</li>
+			<li>&laquo;Geo&raquo; <em>nicht</em> als Plugin integriert.</li>
+			<li>GeoKettle basiert auf Kettle 3.2 (aktuell Kettle 5.0.1).</li>
+			<li>aber...</li>
+		</ul>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Geo ohne GeoKettle</h2>
+		<ul>
+			<li>Sämtliche Geoprozesse werden in der Datenbank gemacht.</li>
+			<li>Funktioniert tadellos aber einschränkend, da z.B. kein Import/Export von Shape-Dateien etc. möglich ist.</li>
+			<li>Beispiele:</li>
+			<ul>
+			  <li>Bodenbedeckungsarten pro Liegenschaft (im öffentlichen Eigentum)</li>
+			  <li>AV-Fileverifikation</li>
+			</ul>
+		</ul>
+	</div></section>
+	
+	<section class="slide cover" id="demo"><div>
+		<h2 style="color:#000;">Demo</h2>
+		<img src="pictures/demo.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Inspiration</h2>
+		<ul>
+			<li>samples/-Verzeichnis</li>
+			<li><a href="http://www.slideshare.com">Slideshare</a></li>			
+			<li><a href="http://forum.pentaho.com">Pentaho Forum</a></li>			
+			<li><a href="http://forum.spatialytics.com">GeoKettle Forum</a></li>			
+			<li><a href="http://diethardsteiner.blogspot.ch">Blog Diethard Steiner</a></li>			
+			<li><a href="https://www.google.ch/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&ved=0CEcQFjAD&url=http%3A%2F%2Fwww.fossgis.de%2Fkonferenz%2F2013%2Fprogramm%2Fattachments%2F416_Praesentation_fossgis_2013_knopp.pdf&ei=omL3UsqVB82UhQfy94DQAw&usg=AFQjCNGSGZXg2kCXLbECj-hx8otyRCSrkQ&sig2=SOoaAGtm4yDh4Fme_6POGw&bvm=bv.60983673,d.ZG4">Vortrag WhereGroup FOSSGIS 2013</a></li>			
+
+		</ul>
+	</div></section>
+
+	
+	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
